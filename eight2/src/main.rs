@@ -53,11 +53,13 @@ fn main() {
                               25, 6);
 
     let decoded = img.decode();
-    decoded.iter().for_each(|row| println!("{}", row.iter().map(|&px| {
-        match px {
-            0 => "▒",
-            1 => "█",
-            _ => " ",
-        }
-    }).collect::<Vec<&str>>().join("")))
+    decoded.iter().for_each(|row|
+        println!("{}", row.iter().map(
+            |&px| {
+                match px {
+                    0 => "▒",
+                    1 => "█",
+                    _ => " ",
+                }
+            }).collect::<Vec<&str>>().join("")))
 }
